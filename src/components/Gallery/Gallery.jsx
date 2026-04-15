@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { client, urlFor } from '../../sanity/client'
+import Lightbox from './Lightbox'
 
 const query = `*[_type == "tattoo"] | order(order asc) {
   _id,
@@ -10,6 +11,7 @@ const query = `*[_type == "tattoo"] | order(order asc) {
 function Gallery() {
   const [tattoos, setTattoos] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selected, setSelected] = useState(null)
 
   useEffect(() => {
     client.fetch(query)
@@ -21,6 +23,14 @@ function Gallery() {
         console.error(err)
         setLoading(false)
       })
+  }, [])
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setSelected(null)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
   }, [])
 
   return (
@@ -39,7 +49,12 @@ function Gallery() {
             <p className="gallery-empty">Sin trabajos aún.</p>
           ) : (
             tattoos.map((tattoo, i) => (
-              <div className="gallery-card" key={tattoo._id} style={{ animationDelay: `${i * 0.08}s` }}>
+              <div
+                className="gallery-card"
+                key={tattoo._id}
+                style={{ animationDelay: `${i * 0.08}s` }}
+                onClick={() => setSelected(tattoo)}
+              >
                 <div className="card-img">
                   <div className="card-corner-tr"></div>
                   <div className="card-corner-bl"></div>
@@ -52,6 +67,13 @@ function Gallery() {
             ))
           )}
         </div>
+      )}
+      {selected && (
+        <Lightbox
+          image={urlFor(selected.image).width(1200).url()}
+          alt={selected.alt}
+          onClose={() => setSelected(null)}
+        />
       )}
     </section>
   )
