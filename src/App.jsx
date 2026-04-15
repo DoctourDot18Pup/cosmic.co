@@ -10,6 +10,9 @@ import './components/Gallery/Gallery.css'
 import About from './components/About/About'
 import './components/About/About.css'
 
+import Footer from './components/Footer/Footer'
+import './components/Footer/Footer.css'
+
 function App() {
   return (
     <div>
@@ -22,6 +25,7 @@ function App() {
       </div>
       <Gallery />
       <About />
+      <Footer />
     </div>
   )
 }

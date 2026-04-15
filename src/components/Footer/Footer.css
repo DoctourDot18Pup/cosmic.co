@@ -1,0 +1,49 @@
+.footer {
+  padding: 20px 32px;
+  border-top: 0.5px solid rgba(240, 237, 230, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-logo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c8e63c;
+  letter-spacing: 0.04em;
+}
+
+.footer-location {
+  font-size: 11px;
+  color: rgba(240, 237, 230, 0.3);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: rgba(240, 237, 230, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #c8e63c;
+}
+
+.footer-line {
+  width: 28px;
+  height: 2px;
+  background: #b5303a;
+  border-radius: 1px;
+}
