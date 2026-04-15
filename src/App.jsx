@@ -7,6 +7,9 @@ import './components/Hero/Hero.css'
 import Gallery from './components/Gallery/Gallery'
 import './components/Gallery/Gallery.css'
 
+import About from './components/About/About'
+import './components/About/About.css'
+
 function App() {
   return (
     <div>
@@ -18,6 +21,7 @@ function App() {
         <div className="stripe-b"></div>
       </div>
       <Gallery />
+      <About />
     </div>
   )
 }
