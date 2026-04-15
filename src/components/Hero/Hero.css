@@ -1,0 +1,122 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 32px 36px;
+  gap: 32px;
+  animation: fadeUp 0.6s ease 0.15s both;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #f0ede6;
+}
+
+.hero-text h1 .accent {
+  color: #c8e63c;
+}
+
+.hero-text h1 .red {
+  color: #b5303a;
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: rgba(240, 237, 230, 0.45);
+  margin-top: 12px;
+  max-width: 300px;
+  line-height: 1.65;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.btn-primary {
+  background: #c8e63c;
+  color: #0a0a0a;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #f0ede6;
+  font-size: 13px;
+  padding: 9px 22px;
+  border-radius: 4px;
+  border: 0.5px solid rgba(240, 237, 230, 0.25);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(240, 237, 230, 0.6);
+}
+
+.hero-character {
+  flex-shrink: 0;
+}
+
+.char-box {
+  width: 130px;
+  height: 150px;
+  border: 1.5px dashed rgba(200, 230, 60, 0.35);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: charFloat 3s ease-in-out infinite, borderGlow 3s ease-in-out infinite;
+}
+
+.char-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(200, 230, 60, 0.08);
+  border: 1.5px solid rgba(200, 230, 60, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.char-inner {
+  width: 22px;
+  height: 22px;
+  background: #c8e63c;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.char-label {
+  font-size: 10px;
+  color: rgba(240, 237, 230, 0.3);
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.hero-stripe {
+  height: 3px;
+  display: flex;
+}
+
+.stripe-r { flex: 1; background: #b5303a; }
+.stripe-y { flex: 1; background: #c8e63c; }
+.stripe-b { flex: 1; background: #0a0a0a; }
