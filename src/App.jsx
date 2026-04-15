@@ -4,6 +4,9 @@ import './components/Navbar/Navbar.css'
 import Hero from './components/Hero/Hero'
 import './components/Hero/Hero.css'
 
+import Gallery from './components/Gallery/Gallery'
+import './components/Gallery/Gallery.css'
+
 function App() {
   return (
     <div>
@@ -14,6 +17,7 @@ function App() {
         <div className="stripe-y"></div>
         <div className="stripe-b"></div>
       </div>
+      <Gallery />
     </div>
   )
 }
